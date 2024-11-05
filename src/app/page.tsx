@@ -1,101 +1,59 @@
 import Image from "next/image";
+import Link from "next/link";
+import { CiSearch, CiHeart, CiUser } from "react-icons/ci";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-white min-h-screen">
+   
+      <nav className="bg-[#A29875] h-[100px] md:h-[134px] flex items-center justify-between px-4 md:px-8 lg:px-16">
+      
+        <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-serif text-white">
+          <Link href="/">MANZZARI</Link>
+        </h1>
+        
+        <div className="hidden md:flex items-center relative w-full max-w-[400px] lg:max-w-[500px]">
+          <input
+            type="text"
+            placeholder="Search for Gold Jewellery and more..."
+            className="w-full h-[36px] md:h-[40px] lg:h-[46px] pl-10 rounded-[10px] font-serif text-[14px] md:text-[16px] lg:text-[18px] text-[#6C757D]"
+          />
+          <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black" size={20} />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="flex items-center space-x-3 md:space-x-4 lg:space-x-6 text-white">
+          <CiHeart size={25} className="cursor-pointer" />
+          <CiUser size={25} className="cursor-pointer" />
+          <AiOutlineShoppingCart size={25} className="cursor-pointer" />
+        </div>
+      </nav>
+
+      <div className="flex flex-col md:flex-row items-center px-4 md:px-8 lg:px-16 py-10 md:py-20">
+        
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left mb-8 md:mb-0">
+          <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-bold font-serif leading-tight">
+            IMPECCABLE CRAFTSMANSHIP AND FINESSE
+          </h1>
+          <p className="text-[#787054] text-[16px] md:text-[18px] lg:text-[22px] font-medium mt-4 max-w-full md:max-w-md lg:max-w-lg leading-relaxed">
+            An example of intricate workmanship and detail, elegant necklaces and long and short chains form a part of our desirable collection.
+          </p>
+          <button className="text-white font-serif bg-[#787054] mt-6 w-[180px] md:w-[220px] lg:w-[288px] h-[45px] md:h-[50px] lg:h-[58px] rounded-[10px] text-[16px] md:text-[20px] lg:text-[24px]">
+            Explore Now
+          </button>
+        </div>
+
+       
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/images/image.jpeg"
+            alt="Jewelry"
+            width={300}
+            height={450}
+            className="rounded-tl-[80px] md:rounded-tl-[100px] lg:rounded-tl-[150px] rounded-br-[80px] md:rounded-br-[100px] lg:rounded-br-[150px] object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
     </div>
   );
 }
